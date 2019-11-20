@@ -143,15 +143,78 @@
             <p><a href="/api/friends">API Friends List</a> | <a href="#">Github Repo</a>
         </div>
     </footer>
+
+    <div id="resultsModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>
+                    <h3 class="modal-title font-weight-bold">Best Match</h3>
+                </div>
+
+                <div class="modal-body">
+                    <h3 id="matchName"></h3>
+                    <img id="matchImg" src="#" alt="Placeholder"/>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+
+        </div>
+    </div>
     
+
+<script type="text/javascript">
+    $("#submitButton").on("click", function (event) {
+        event.preventDefault();
+
+        function validate() {
+        var isValid = true;
+        $(".form-control").each(function() {
+            if ($(this).val() === "") isValid = false;
+        });
+        $(".chosen-select").each(function() {
+            if ($(this).val === "") isValid = false;
+        });
+        return isValid
+        }
+        
+        if(validate() === true) {
+            var userData = {
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim(),
+                scores: [
+                    $("question1").val(),
+                    $("question2").val(),
+                    $("question3").val(),
+                    $("question4").val(),
+                    $("question5").val(),
+                    $("question6").val(),
+                    $("question7").val(),
+                    $("question8").val(),
+                    $("question9").val(),
+                    $("question10").val(),
+                ]
+            };
+
+
+            $.post("/api/friends", userData, function(data){
+                $("#matchName").text(data.name);
+                $("matchImg").attr("src", data.photo);
+                $("#resultsModal").modal("toggle");
+            })} else {
+                alert("Please fill out all fields before submitting!")
+            }
+        })
+    </script>
+
+
+
+
 </body>
 </html>
 
-<select class="chosen-select" id="q8" style="display: none;">
-        <option value=""></option>
-        <option value="1">1 (Strongly Disagree)</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5 (Strongly Agree)</option>
-      </select>
