@@ -15,11 +15,9 @@ module.exports = function(app) {
         };
 
         var userData = req.body
-        console.log(userData);
         var userName = userData.name;
-        console.log(userName);
         var userScores = userData.scores
-        console.log(userScores);
+    
 
         var b = userScores.map(function(item) {
             return parseInt(item, 10)
@@ -56,8 +54,10 @@ module.exports = function(app) {
                 bestMatch.difference = totalDifference
             };
             console.log(`Total difference ${totalDifference}`);
-        };
+        }
+        console.log(bestMatch);
         
         friends.push(userData);
+        res.json(bestMatch)
     });
 }
