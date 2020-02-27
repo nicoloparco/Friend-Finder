@@ -6,12 +6,12 @@ var friends = [
     },
     {
         name: "Mac",
-        photo: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwisy8W1rJ_mAhXSdd8KHSXQDJoQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.huffpost.com%2Fentry%2Fits-always-sunny-in-philadelphia-fat-mac_n_920799&psig=AOvVaw3KPcPphR3uepXuXGGLGgyS&ust=1575664123711746",
+        photo: "https://img.huffingtonpost.com/asset/5bb4dd8d24000031005633a6.jpeg?ops=scalefit_630_noupscale",
         scores: [5, 3, 5, 3, 5, 3, 3, 5, 3, 1]
     },
     {
         name: "Charlie",
-        photo: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjz66aArZ_mAhWSm-AKHW-ZAYYQjRx6BAgBEAQ&url=https%3A%2F%2Fitsalwayssunny.fandom.com%2Fwiki%2FCharlie_Kelly&psig=AOvVaw2zMJyeUKh6XrAs2VplNjUD&ust=1575664248953747",
+        photo: "https://vignette.wikia.nocookie.net/itsalwayssunny/images/f/f0/Charlie-signature-attire.jpg/revision/latest/scale-to-width-down/340?cb=20091207003040",
         scores: [1, 3, 1, 1, 5, 5, 1, 3, 5, 3]
     },
     {
